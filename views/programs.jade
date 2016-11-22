@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Programs
+  
+  ul
+    li
+      h2 Sample Program
+        p Sample program description.
+      each program, i in programs 
+        li 
+          h2 #{program.name}
+            p program.description
+    
+      
+  form(id="addProgramForm" method="post" action="/programs")
+    input(type="text", placeholder="Digital Divide", name="name", value = "")
+    input(type="text" placeholder="joe@email.com", name="description", value = "")
+    button(type="submit") Submit
+      
+    

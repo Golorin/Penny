@@ -8,7 +8,7 @@ block content
         a(href="mailto:#{user.email}")= user.username
         
   h2 Please insert a new person below:
-    form(method="post" action="/")
+    form(id="addUserForm" method="post" action="/")
       input(type="text", placeholder="Joe", name="username", value = "")
       input(type="text" placeholder="joe@email.com", name="email", value = "")
       button(type="submit") Submit

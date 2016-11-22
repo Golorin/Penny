@@ -11,6 +11,7 @@ var db = require('monk')('localhost/nodetest1');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var programs = require('./routes/programs');
 
 var app = express();
 
@@ -24,7 +25,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use("/static", express.static(path.join(__dirname, 'public')));
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
@@ -34,6 +35,7 @@ app.use(function(req,res,next){
 
 app.use('/', index);
 app.use('/users', users);
+app.use('/programs', programs);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
