@@ -1,5 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1 Userlist
+  ul
+    each user, i in userlist 
+      li
+        a(href="mailto:#{user.email}")= user.username
+        
+  h2 Please insert a new person below:
+    form(method="post" action="/")
+      input(type="text", placeholder="Joe", name="username", value = "")
+      input(type="text" placeholder="joe@email.com", name="email", value = "")
+      button(type="submit") Submit
+      
+    
