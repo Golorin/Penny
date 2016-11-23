@@ -5,9 +5,7 @@ module.exports = function(program, description, req) {
   var db = req.db;
   var collection = db.get('programs');
   collection.insert({
-    "program" : {
-      "name" : program,
-      "description" : description
-    }
+    "name" : program,
+    "description" : description
   });
 };
