@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var addProgram = require('../api/addProgram');
+var programsList = require('../api/programs.json');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -8,7 +9,8 @@ router.get('/', function(req, res, next) {
   var collection = db.get('programs');
   collection.find({},{}, function(e, docs) {
     res.render('programs', {
-      'programs' : docs
+      'programs' : docs,
+      'programsList' : programsList
     });
   });
 });

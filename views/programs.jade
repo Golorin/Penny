@@ -7,10 +7,14 @@ block content
     li
       h2 Sample Program
         p Sample program description.
+      each program, i in programsList
+        li
+          h2 Original: #{program.name}
+          p #{program.description}
       each program, i in programs 
         li 
           h2 #{program.name}
-            p program.description
+            p #{program.description}
     
       
   form(id="addProgramForm" method="post" action="/programs")
