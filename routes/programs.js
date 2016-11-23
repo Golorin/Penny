@@ -21,7 +21,8 @@ router.post('/', function(req, res, next) {
   var collection = db.get('programs');
   collection.find({},{}, function(e, docs) {
     res.render('programs', {
-      'programs' : docs
+      'programs' : docs,
+      'programsList' : programsList
     });
   });
 })

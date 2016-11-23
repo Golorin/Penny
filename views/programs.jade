@@ -11,15 +11,15 @@ block content
         li
           h2 Original: #{program.name}
           p #{program.description}
-      each program, i in programs 
+      each prog, i in programs 
         li 
-          h2 #{program.name}
-            p #{program.description}
+          h2 #{prog.name}
+            p #{prog.description}
     
       
   form(id="addProgramForm" method="post" action="/programs")
-    input(type="text", placeholder="Digital Divide", name="name", value = "")
-    input(type="text" placeholder="joe@email.com", name="description", value = "")
+    input(type="text", placeholder="Program Name", name="name", value = "")
+    input(type="text" placeholder="Description", name="description", value = "")
     button(type="submit") Submit
       
     

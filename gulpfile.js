@@ -30,10 +30,10 @@ gulp.task('sass', function() {
 gulp.task('scripts', function() {
   return gulp.src('src/js/*.js')
     .pipe(concat('all.js'))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest('public/scripts/'))
     .pipe(rename('all.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('public/scripts/'));
 });
 
 // Watch Files For Changes
